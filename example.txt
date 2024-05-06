@@ -1,0 +1,2 @@
+Example file for pushing up to Github
+Also for SSH
