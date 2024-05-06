@@ -2,9 +2,25 @@
 
 ## i) Setup (Start Here!!!)
 
-The chromatography file parser is a command line tool that invokes a python script. This means you can run the script from your Terminal (mac), or terminal-emulator in Windows (Putty, powershell, etc.). In order to run this, you must have **python3** installed
-Once python3 is install, you will need to install the package _scipy_ from python. To do this, simply navigate to your terminal and install it via pip:  
-`$ pip install scipy`
+The chromatography file parser is a command line tool that invokes a python script. This means you can run the script from your Terminal (mac), or terminal-emulator in Windows (Putty, powershell, etc.), which we will refer to as "your terminal." In order to run this, you must have [**python3**](https://www.python.org/downloads/) installed .
+
+
+With your terminal opened, check to make sure you have python3 installed by running these commands:
+```
+python --version
+```
+or
+```
+python3 --version
+```
+
+One of those commands should show "Python 3.9" or newer if you have python3 installed correctly. For the remaining steps, use the command (`python` or `python3`) that worked.
+
+You will now need to install a python package called _scipy_. To do this, simply navigate to your terminal and install it via pip:  
+
+```
+python -m pip install --user scipy
+```
 
 ## ii) Run the command (CLI - most people do this)
 
