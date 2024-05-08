@@ -1,6 +1,8 @@
 import csv
+import pandas as pd
 #import fire
 import re
+
 
 # Function to transform text to snake case
 def string_to_snake_case(string):
