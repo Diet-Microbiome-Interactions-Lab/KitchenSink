@@ -64,7 +64,7 @@ def filter_parameters():
 def parameters_dictionary():
     parameters = filter_parameters()
     parameters_dictionary = {}
-    for parameter in parameters:
+    for parameter in parameters: # I would love to have a better solution for repetitions. As of now I have to manually input the range of reperitions. range()?
         parameters_dictionary[parameter] = define_parameter_values(parameter) 
     return parameters_dictionary
 
