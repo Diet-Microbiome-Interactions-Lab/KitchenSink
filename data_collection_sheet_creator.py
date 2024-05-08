@@ -52,41 +52,35 @@ def define_parameter_values(parameter):
 
 #Function to filter parameters that will be asked to be filled out
 def filter_parameters():
-    #hello this is a test
-    filtered_parameters = filter(define_parameters())
+    parameters = define_parameters()
+    exclude = {'sample_id',
+               'optical_density'}
+    filtered_parameters = [parameter for parameter in parameters if parameter not in exclude ]
     return filtered_parameters
 
 #Function to define parameters dictionary based on the established parameters
 def parameters_dictionary():
-    parameters = define_parameters()
+    parameters = filter_parameters()
     parameters_dictionary = {}
     for parameter in parameters:
         parameters_dictionary[parameter] = define_parameter_values(parameter) 
     return parameters_dictionary
 
-print(define_parameters())
-#print(parameters_dictionary())
 
-# Create CSV file and populate parameters
-def growth_curve():
+
+# Create CSV file and populate parameters and values.
+def growth_curve_csv():
     # Define the file name
-    file_name = string_to_snake_case(file_name)
-    # Define the parameters of the .csv file
-    #parameters =
-    # Define the required parameter contents
-    data = populate_parameters()
-
-    # Create .csv file
+    file_name = string_to_snake_case(input("Define a name for your file: "))
+    # Instantiate .csv file
     with open((file_name + ".csv"), 'w', newline='') as file:
         writer = csv.writer(file)
-
         # Populate Parameters
-        writer.writerows(parameters)
+        writer.writerow(header for header in define_parameters())
+        # Populate Parameter values
+    print("Data collection sheet has been created!")
 
-        # Populate Parameter data
-        writer.writerows(data)
-    print("CSV file has been created and data has been written.")
-
+growth_curve_csv()
 # Entry point
 #if __name__ == "__main__":
 #    fire.Fire(growth_curve)
