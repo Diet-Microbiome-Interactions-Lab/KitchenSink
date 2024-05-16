@@ -8,5 +8,8 @@ def solution_dilution(initial_concentration, final_concentration, final_volume):
     return(
         "Solvent Volume: " + str(difference) +
         "\nVolume to add: " + str(volume_to_add))
+
 if __name__ == '__main__':
     fire.Fire(solution_dilution)
+
+    #do one for inital concentration
