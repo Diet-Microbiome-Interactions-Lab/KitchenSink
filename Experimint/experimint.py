@@ -1,28 +1,37 @@
 import argparse
-from core import *
+
+from core import csv_write
 
 def main(): 
     parser = argparse.ArgumentParser(
                     prog='Data Collection Sheet Generator',
                     description='This program eliminates the manual work of carpentering data collection sheets files, bridging the time gap between effective experimental design and laboratory testing.'
                     )
+    # ~~~ Required Arguments ~~~ #
     parser.add_argument('-fn','--filename',
                         help= 'Required argument to specify the name of the output file.',
                         metavar='File Name',
                         type=str,
                         required=True)
-    parser.add_argument('-b','--block',
-                        help = 'Optional parameter used to separate a group of experimental units based on blocking criteria.',
+    parser.add_argument('-m','--measurements',
+                        help='Required parameter specifying the measuring criteria for the experimental units.',
                         type=str,
                         nargs='*',
-                        metavar='Experimental Blocks',
-                        required=False)
+                        metavar='Measurement',
+                        required=True)
     parser.add_argument('-t','--treatments',
                         help='Required parameter, specifying different criteria for classification of experimental units.',
                         type=str,
                         nargs="*",
                         metavar='Treatments',                                   
                         required=True)
+    # ~~~ Not Required Arguments ~~~ #
+    parser.add_argument('-b','--block',
+                        help = 'Optional parameter used to separate a group of experimental units based on blocking criteria.',
+                        type=str,
+                        nargs='*',
+                        metavar='Experimental Blocks',
+                        required=False)
     parser.add_argument('-r','--repetitions',
                         help='Optional parameter to specify the number of experimental repetitions to take for each experimental unit, *** default is three repetitions ***',
                         default=3,
@@ -35,15 +44,10 @@ def main():
                         nargs='*',
                         metavar='Repeat Measurement',
                         required=False)
-    parser.add_argument('-m','--measurements',
-                        help='Required parameter specifying the measuring criteria for the experimental units.',
-                        type=str,
-                        nargs='*',
-                        metavar='Measurement',
-                        required=True)
     args = parser.parse_args()
 
-    csv_write(args.filename, args.block, args.treatments, args.repeat_measurement,args.repetitions, args.measurements)
+    csv_write(args)
+    # args.filename, args.block, args.treatments, args.repeat_measurement,args.repetitions, args.measurements
 
     
 if __name__ == "__main__":
