@@ -1,5 +1,5 @@
 import itertools
-from main import *
+from Experimint.experimint import *
 import re
 # Function to transform text to snake case
 def string_to_snake_case(string):
@@ -61,6 +61,14 @@ def value_combinations(dictionary):
     combinations = list(itertools.product(*dictionary.values()))
     return combinations
 
+# Function to define sample_id
+def define_sample_id(combinations_list):
+    sample_id = ''
+    for character in combinations_list:
+        character_str = str(character)  # Convert the item to a string if it's not already
+        if character_str:  # Check if the string is not empty
+              sample_id += character_str[0]  # Append the first character
+    return sample_id
 
 
 

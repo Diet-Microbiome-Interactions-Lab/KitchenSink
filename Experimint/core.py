@@ -18,7 +18,7 @@ def csv_write(filename, blocks, treatments, repeat_measurement, repetition_integ
         for combination in value_combinations(dictionary):
             # Convert tuple to list and insert an empty string at the beginning
             modified_combination = list(combination)
-            modified_combination.insert(0, '')
+            modified_combination.insert(0, define_sample_id(combination))
             writer.writerow(modified_combination)
         # Insert additional column names
 
