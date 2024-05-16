@@ -43,7 +43,7 @@ def main():
                         required=True)
     args = parser.parse_args()
 
-    csv_write(args.filename, args.block, args.treatments, args.repeat_measurement,args.repetitions, args.measurements) #ADD measurements
+    csv_write(args.filename, args.block, args.treatments, args.repeat_measurement,args.repetitions, args.measurements)
 
     
 if __name__ == "__main__":
