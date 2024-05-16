@@ -13,7 +13,7 @@ from pathlib import Path
 
 from scipy.stats import linregress
 
-def process_chromatography_file(input_source: Path | str, instrument: str, savefile=None):
+def process_chromatography_file(input_source: Path | str, instrument: str = 'gc', savefile=None):
     '''
     If a string, we expect it to be the file content, otherwise we expect a Path object.
     '''
