@@ -1,4 +1,4 @@
-import fire
+#import fire
 def solution_dilution(initial_concentration, final_concentration, final_volume):
     initial_concentration = float(initial_concentration)
     final_concentration = float(final_concentration)
@@ -9,7 +9,8 @@ def solution_dilution(initial_concentration, final_concentration, final_volume):
         "Solvent Volume: " + str(difference) +
         "\nVolume to add: " + str(volume_to_add))
 
-if __name__ == '__main__':
-    fire.Fire(solution_dilution)
+#if __name__ == '__main__':
+    #fire.Fire(solution_dilution)
 
     #do one for inital concentration
+print(solution_dilution(100,0.1,5000))

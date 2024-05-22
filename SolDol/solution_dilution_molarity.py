@@ -1,5 +1,4 @@
 from chempy import Substance
-import fire
 
 
 def calculate_moles(mass,molar_mass):

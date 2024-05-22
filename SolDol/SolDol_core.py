@@ -1,0 +1,2 @@
+def SolDol():
+    return()

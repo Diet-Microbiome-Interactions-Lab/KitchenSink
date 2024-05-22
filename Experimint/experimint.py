@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 
 from core import csv_write
@@ -47,7 +48,6 @@ def main():
     args = parser.parse_args()
 
     csv_write(args)
-    # args.filename, args.block, args.treatments, args.repeat_measurement,args.repetitions, args.measurements
 
     
 if __name__ == "__main__":
