@@ -4,7 +4,7 @@ from SolDol_core import SolDol
 
 def main():
     parser = argparse.ArgumentParser(
-                    prog='C1*V1 = C2*V2 calculator!',
+                    prog='SolDol (Solution Dilution) calculator based on C1*V1 = C2*V2!',
                     description='Why do your work when you can automate it?\n'
                     )
     # ~~~ Value Arguments ~~~ #
