@@ -15,9 +15,8 @@ class SolDol:
         if self.c1 == 0:
             raise ValueError("Initial concentration (c1) cannot be zero.")
         return (self.c2 * self.v2) / self.c1
-
     def display_result(self):
         print("Initial concentration: " + str(self.c1) + f" {self.st}/{self.sv}\n" + 
               "Final concentration and volume: " + str(self.c2) + f" {self.st}/" + str(self.v2) + f" {self.sv}\n\n"
               "Solute: " + str(self.v1) + f" {self.sv}\n"
-              "Solvent: " + str(self.v2) + f" {self.sv}")
+              "Solvent: " + str(calculate_difference_v2_v1(self.v1,self.v2)) + f" {self.sv}")
